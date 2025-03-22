@@ -30,6 +30,7 @@ export class GameMaster {
         let nextMove = this.getNextMove();
 
         if (this.#checkMoves(nextMove) === true) {
+            console.log("peale makeMove")
             alert(`${nextMove} you cannot do this move`);
             return;
         }
@@ -55,6 +56,7 @@ export class GameMaster {
 
             this.#handleAIMove(nextMove);
         } else {
+            console.log("peale changemove")
             alert(`${nextMove} you cannot do this move`);
         }
     }
@@ -95,8 +97,7 @@ export class GameMaster {
         this.#playerXCount = 4;
         this.#playerOCount = 4;
         if (this.ai !== null) {
-            this.ai.aiMoveCount = 0;
-            this.ai.aiCellsArray = [];
+            this.ai.resetFields();
         }
     }
 

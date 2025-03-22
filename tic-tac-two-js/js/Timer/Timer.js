@@ -1,3 +1,4 @@
+import { deactivateGame } from "../Helpers/gameState.js";
 import { showGameMessage } from "../Helpers/showGameMessage.js";
 export class Timer {
     constructor(sec) {
@@ -20,6 +21,7 @@ export class Timer {
             if (this.sec <= 0) { 
                 this.stopTheTimer();
                 timerDisplay.innerHTML = "Time's up!";
+                deactivateGame();
                 showGameMessage("Game over! Time's up!");
                 return;
             }

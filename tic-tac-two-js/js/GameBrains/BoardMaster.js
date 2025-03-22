@@ -40,18 +40,23 @@ export class BoardMaster {
             event.preventDefault();
         }
 
+        if(this.checkKeyEvent(event.key) === false) {
+            alert(`${this.#gameMaster.getNextMove()} you cannot do this move`);
+            return;
+        }
+
         switch (event.key) {
             case "ArrowUp":
-                if (this.#startIndex >= this.#gridSize) this.#startIndex -= this.#gridSize;
+                this.#startIndex -= this.#gridSize;
                 break;
             case "ArrowDown":
-                if (this.#startIndex + 2 * this.#gridSize + this.#gridSize < 25) this.#startIndex += this.#gridSize;
+                 this.#startIndex += this.#gridSize;
                 break;
             case "ArrowLeft":
-                if (this.#startIndex % this.#gridSize !== 0) this.#startIndex -= 1;
+                this.#startIndex -= 1;
                 break;
             case "ArrowRight":
-                if ((this.#startIndex + 2) % this.#gridSize !== this.#gridSize - 1) this.#startIndex += 1;
+                this.#startIndex += 1;
                 break;
         }
 
@@ -71,5 +76,23 @@ export class BoardMaster {
         Array.from(cells).forEach(cell => {
             cell.textContent = ""; 
         });
+    }
+
+    checkKeyEvent(key) {
+        switch (key) {
+            case "ArrowUp":
+                if (this.#startIndex >= this.#gridSize) return true;
+                break;
+            case "ArrowDown":
+                if (this.#startIndex + 2 * this.#gridSize + this.#gridSize < 25) return true;
+                break;
+            case "ArrowLeft":
+                if (this.#startIndex % this.#gridSize !== 0) return true;
+                break;
+            case "ArrowRight":
+                if ((this.#startIndex + 2) % this.#gridSize !== this.#gridSize - 1) return true;
+                break;
+        }
+        return false;
     }
 }

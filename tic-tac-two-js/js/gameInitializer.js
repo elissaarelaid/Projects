@@ -112,7 +112,7 @@ export function initializeGame() {
         if (!gameMaster || !boardMaster) return;
 
         deactivateGame();
-        timer.stopTheTimer(30);
+        timer.stopTheTimer();
         resetGame(gameMaster, boardMaster);
         gameReset = true;
         gameMessage.style.display = "none"; 
