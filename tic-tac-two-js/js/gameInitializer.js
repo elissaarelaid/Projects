@@ -1,6 +1,6 @@
 import { makeInitialBoard } from "./Helpers/initialBoard.js";
 import { resetGame } from "./Helpers/resetGame.js";
-import { Timer } from "./Timer/timer.js";
+import { Timer } from "./Timer/Timer.js";
 import { activateGame, deactivateGame } from "./Helpers/gameState.js";
 import { getGameMode, setGameMode } from "./Helpers/gameMode.js";
 import { AI } from "./GameBrains/AI.js";
