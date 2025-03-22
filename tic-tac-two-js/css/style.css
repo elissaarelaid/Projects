@@ -1,0 +1,120 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 130px);  
+    grid-template-rows: repeat(5, 130px);                                  
+    padding: 10px;   
+    justify-content: center;    
+    align-content: center;  
+    align-self: center;                         
+}
+
+.cell {
+    background-color: #f1f1f1;
+    border: 0.5px solid black;
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highlight {
+    border: 5px solid #333 !important;
+}
+
+.selected {
+    background-color: #b4b4b4;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: start; 
+    align-items: flex-start;
+    gap: 50px; 
+    min-height: 100vh;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px; 
+}
+
+.start-button-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15px; 
+}
+
+.start-button-wrapper :hover {
+    background-color:  rgb(205, 104, 104) !important;
+}
+
+
+.mode-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px; 
+}
+
+.mode-button-wrapper > label {
+    font-size: 20px;
+}
+
+.mode-button-container {
+    display: flex;
+    gap: 10px; 
+}
+
+
+.game-mode-button.selected {
+    background-color:  rgb(147, 75, 75) !important;
+    border: 3px solid black;
+}
+
+
+.reset-game-button {
+    padding: 10px 20px;
+    background-color:  rgb(255, 130, 130);
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+.game-mode-button {
+    padding: 10px 20px;
+    background-color:  rgb(255, 130, 130);
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+.timer-style {
+    font-size: 35px;
+    font-weight: bold;
+    color:  black;
+    margin-bottom: 15px;
+}
+
+.start-game-button{
+    padding: 10px 20px;
+    background-color:  rgb(255, 130, 130);
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+.game-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    color: red;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: none; 
+}
+
