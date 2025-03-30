@@ -30,7 +30,6 @@ export class GameMaster {
         let nextMove = this.getNextMove();
 
         if (this.#checkMoves(nextMove) === true) {
-            console.log("peale makeMove")
             alert(`${nextMove} you cannot do this move`);
             return;
         }
@@ -56,7 +55,6 @@ export class GameMaster {
 
             this.#handleAIMove(nextMove);
         } else {
-            console.log("peale changemove")
             alert(`${nextMove} you cannot do this move`);
         }
     }
@@ -78,7 +76,7 @@ export class GameMaster {
     }
 
     setNextMove() {
-        return this.#lastMove === "" || this.#lastMove === "O" ? this.#lastMove = "X" : this.#lastMove = "O"; 
+        this.#lastMove === "" || this.#lastMove === "O" ? this.#lastMove = "X" : this.#lastMove = "O"; 
     }
 
     alertWinner() {

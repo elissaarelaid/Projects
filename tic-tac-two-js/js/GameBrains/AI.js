@@ -15,7 +15,6 @@ export class AI {
     }
 
     move() {
-        console.log(this.#aiMoveCount)
         if (!isGameActivated()) return;
     
         const executeMove = (moveFunction) => {
@@ -42,11 +41,9 @@ export class AI {
     resetFields() {
         this.aiCellsArray = [];
         this.#aiMoveCount = 0;
-        console.log("resetting")
     }
 
     #aiMakeMove() {
-        console.log("make")
         if (this.#aiMoveCount >= 4) {
             console.log("AI shold not do this move");
             return;
@@ -77,7 +74,6 @@ export class AI {
 
 
     #aiChangeMove() {
-        console.log("change")
         if (this.aiCellsArray.length === 0) return;
 
         let newMove = this.#findBestMove();
@@ -95,12 +91,9 @@ export class AI {
     }
 
     #aiHandleMovement() {
-        console.log("handle")
-        let eventArray = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+        const eventArray = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
         let eventKey = eventArray[Math.floor(Math.random() * eventArray.length)];  
-        console.log("esimene katse")
         while(!this.#boardMaster.checkKeyEvent(eventKey)) {
-            console.log("proovin")
             eventKey = eventArray[Math.floor(Math.random() * eventArray.length)];  
         }  
         this.#boardMaster.handleMovement(new KeyboardEvent("keydown", { key: eventKey }));
