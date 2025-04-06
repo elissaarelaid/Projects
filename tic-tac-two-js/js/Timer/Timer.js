@@ -26,7 +26,7 @@ export class Timer {
                 return;
             }
     
-            timerDisplay.innerHTML = `00:${this.sec < 10 ? '0' : ''}${this.sec}`; 
+            timerDisplay.innerHTML = `${Math.floor(this.sec / 60)}: ${ this.sec % 60 < 10 ? '0' : ''}${this.sec % 60 }`;
             this.sec--; 
         }, 1000);
     }

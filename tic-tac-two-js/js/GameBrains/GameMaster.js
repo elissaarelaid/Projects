@@ -29,7 +29,7 @@ export class GameMaster {
     makeMove(index) {
         let nextMove = this.getNextMove();
 
-        if (this.#checkMoves(nextMove) === true) {
+        if (this.#canAddNewMove(nextMove) === true) {
             alert(`${nextMove} you cannot do this move`);
             return;
         }
@@ -47,7 +47,7 @@ export class GameMaster {
 
     changeMove(i, j) {
         let nextMove = this.getNextMove();
-        if (this.cells[i].textContent === nextMove && this.cells[j].textContent === "" && this.checkPlayerCount(nextMove)) {
+        if (this.cells[i].textContent === nextMove && this.cells[j].textContent === "" && this.canChangeMovesOrMoveBoard(nextMove)) {
             this.cells[i].textContent = "";
             this.cells[j].textContent = nextMove;
             this.setNextMove();
@@ -63,11 +63,11 @@ export class GameMaster {
         move === "X" ? this.#playerXCount-- : this.#playerOCount--;
     }
 
-    #checkMoves(move) {
+    #canAddNewMove(move) {
         return move === "X" ? this.#playerXCount === 0 : this.#playerOCount === 0;
     }
 
-    checkPlayerCount(move) {
+    canChangeMovesOrMoveBoard(move) {
         return move === "X" ? this.#playerXCount < 3 : this.#playerOCount < 3;
     }
 
